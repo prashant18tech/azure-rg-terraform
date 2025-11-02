@@ -3,10 +3,15 @@ variable "client_id" {}
 variable "client_secret" {}
 variable "tenant_id" {}
 variable "resource_group_name" {
-  default = "rg-from-jenkins-tf"
+  description = "Name of the Resource Group"
+  type        = string
+  default     = "tf-storage-rg"
 }
+
 variable "location" {
-  default = "East US"
+  description = "Azure location"
+  type        = string
+  default     = "East US"
 }
 
 variable "storage_account_name" {
