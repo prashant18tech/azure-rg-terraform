@@ -1,0 +1,6 @@
+subscription_id     = "your-azure-subscription-id"
+client_id           = "your-azure-client-id"
+client_secret       = "your-azure-client-secret"
+tenant_id           = "your-azure-tenant-id"
+resource_group_name = "rg-from-jenkins-tf"
+location            = "East US"
