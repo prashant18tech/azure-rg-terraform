@@ -1,17 +1,17 @@
 pipeline {
     agent any
-    
+
     environment {
         ARM_SUBSCRIPTION_ID = credentials('azure-subscription-id')
         ARM_CLIENT_ID       = credentials('azure-client-id')
         ARM_CLIENT_SECRET   = credentials('azure-client-secret')
         ARM_TENANT_ID       = credentials('azure-tenant-id')
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/prashant18tech/azure-rg-terraform/repo.git'
+                git branch: 'main', url: 'https://github.com/your/repo.git'
             }
         }
         stage('Terraform Init') {
@@ -42,10 +42,12 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
-            cleanWs()
+            node {
+                cleanWs()
+            }
         }
     }
 }
