@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/prashant18tech/azure-rg-terraform/repo.git'
+                git branch: 'main', url: 'https://github.com/prashant18tech/azure-rg-terraform.git'
             }
         }
         stage('Terraform Init') {
@@ -45,9 +45,7 @@ pipeline {
 
     post {
         always {
-            node {
-                cleanWs()
-            }
+            cleanWs()
         }
     }
 }
