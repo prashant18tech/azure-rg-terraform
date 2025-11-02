@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your/repo.git'
+                git branch: 'main', url: 'https://github.com/prashant18tech/azure-rg-terraform/repo.git'
             }
         }
         stage('Terraform Init') {
